@@ -8,18 +8,22 @@
 
 ---
 
-## 1. Prompt used
+## 1. Prompts used
 
-> Build me a Streamlit app (Python 3.12) and give me three complete files: `app.py`, `requirements.txt`, and `README.md`.
->
-> Requirements:
-> - Let users choose Country 1 and Country 2 from IMF countries and the Euro area (IMF code G163). Retrieve monthly IMF CPI and exchange-rate data from January 1976 where available, using the IMF SDMX 3.0 API at https://api.imf.org/external/sdmx/3.0. CPI key: `{ISO3}.CPI._T.IX.M`. Exchange-rate key: `{ISO3}.XDC_USD.PA_RT.M`.
-> - Define S(t) as units of Country 2 currency per one unit of Country 1 currency. IMF rates are local currency per USD, so convert them to that direction. Let P1(t) and P2(t) be the monthly CPIs. Compute RER(t) = S(t) × P1(t) / P2(t).
-> - Over user-selected start and end months, compute RER* = the average of RER(t) over valid months, and plot Real Index(t) = 100 × RER(t) / RER*. Recompute RER* when the dates change. Plot nominal S(t) in actual currency units, not normalized.
-> - Let users choose Real, Nominal, or Both in interactive charts (Both on separate y-axes), and add a CSV download button with all observations and calculations for the selected sample period.
-> - IMF data may have gaps or limited coverage, so handle missing data gracefully.
+These are the exact prompts sent to the model, in order. Screenshots of the same chat are attached.
 
-The full chat is available as screenshots (attach them here).
+| # | Date | Prompt (verbatim) |
+|---|---|---|
+| 1 | 25 Oct 2026 | "Complete the assignment below for me", followed by the full assignment text pasted in (steps 1–5, the app and economic requirements, and the data hints). |
+| 2 | 26 Oct 2026 | "Yes, open GitHub in the in-app browser and help me create the repo and deploy to Streamlit. I'll sign in myself." |
+| 3 | 26 Oct 2026 | "I'm signed in to GitHub. Go ahead and create the repo." |
+| 4 | 26 Oct 2026 | "I'm signed in to Streamlit Community Cloud. Go ahead and deploy the app." |
+| 5 | 26 Oct 2026 | "push this code to github. then pull the repo to my local machine. clone the repo to following directory /Users/obiasinugo/Code/" |
+| 6 | 26 Oct 2026 | "Yes, copy Submission.md and the CSV into ~/Code/real-exchange-rate-app but don't commit them." |
+| 7 | 26 Oct 2026 | "push the new changes" |
+| 8 | 26 Oct 2026 | "I've run gh auth login. Push the commit now." |
+| 9 | 26 Oct 2026 | "follow the submission instructions for me and create a document that i can submit." |
+| 10 | 26 Oct 2026 | "Yes, update Submission.md in the repo so its prompt section lists the exact prompts, then commit and push." |
 
 ## 2. Issues found and fixed during development
 
