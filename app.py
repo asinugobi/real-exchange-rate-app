@@ -224,7 +224,7 @@ if n_valid < len(sample):
 
 view = st.radio("Chart", ["Real", "Nominal", "Both"], horizontal=True)
 x = sample.index.to_timestamp()
-real_trace = go.Scatter(x=x, y=sample["Real_Index"], name="Real Index (RER*/100)",
+real_trace = go.Scatter(x=x, y=sample["Real_Index"], name="Real Index (sample avg = 100)",
                         line=dict(color="#1f77b4"))
 nom_trace = go.Scatter(x=x, y=sample["S"], name=f"Nominal S(t): {c2} currency per {c1} currency",
                        line=dict(color="#d62728"))
